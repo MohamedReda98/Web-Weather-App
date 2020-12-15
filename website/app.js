@@ -9,7 +9,7 @@ document.getElementById('generate').addEventListener('click', performAction);
 function performAction() {
     const inpZip = document.getElementById('zip').value;
     const inpFeelings = document.getElementById('feelings').value;
-    if (inpZip=='' || typeof inpZip !='number' ){alert("Please enter valid zip code")}
+    if (inpZip=='' || typeof inpZip !='number' || inpZip.length!==5){alert("Please enter valid zip code")}
     else{
         zip=inpZip;
         console.log(getApi());
