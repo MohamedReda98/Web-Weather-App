@@ -1,5 +1,6 @@
 // Setup empty JS object to act as endpoint for all routes
 projectData = {};
+const fetch = require('node-fetch');
 
 // Require Express to run server and routes
 /* Express to run server and routes */
@@ -27,8 +28,18 @@ app.use(express.static('website'));
 const port = 3000,
 /* Spin up the server*/
     server = app.listen(port, listening);
-function listening(){
-    // console.log(server);
-    console.log(`running on localhost: ${port}`)
+function listening(){console.log(`running on localhost: ${port}`)}
+
+// Post route
+let allData = {};
+app.get('/allData',saveData);
+function saveData(req,res) {
+    allData = {
+        date:req.body.date,
+        temp: req.body.temp,
+        feelings: res.body.feelings
+    }
+    res.send(allData)
+    console.log(allData)
 }
-server;
+

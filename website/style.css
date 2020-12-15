@@ -64,16 +64,17 @@ input{
     border: none;
 }
 
-button{
+/*button{
     width: 400px;
     height: 100px;
-    background: #3b4a6b;
+    background: #44d712;
     color: #f0d43a;
     font-size: 26px;
     font-family: 'Oswald', sans-serif;
     border: none;
     box-shadow: 2px 4px 5px #444;
 }
+*/
 h1{
     font-size: 36px;
 }
