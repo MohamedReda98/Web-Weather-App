@@ -1,7 +1,6 @@
 // Setup empty JS object to act as endpoint for all routes
 projectData = {};
 const fetch = require('node-fetch');
-
 // Require Express to run server and routes
 /* Express to run server and routes */
 const express = require('express');
@@ -10,7 +9,7 @@ const express = require('express');
 const app = express();
 
 /* Dependencies */
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 
 /* Middleware*/
 //Here we are configuring express to use body-parser as middle-ware.
@@ -31,15 +30,23 @@ const port = 3000,
 function listening(){console.log(`running on localhost: ${port}`)}
 
 // Post route
-let allData = {};
-app.get('/allData',saveData);
+
+
+app.get('/update',saveData);
 function saveData(req,res) {
+    res.send(allData)
+    console.log(allData)
+}
+let allData = {};
+app.post('/allData',posting)
+function posting(req,res){
     allData = {
         date:req.body.date,
-        temp: req.body.temp,
+        tempreture: req.body.tempreture,
         feelings: res.body.feelings
     }
     res.send(allData)
     console.log(allData)
 }
+
 
