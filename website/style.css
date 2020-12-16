@@ -112,4 +112,8 @@ button:focus {
     color: #f0d43a; 
     font-family: 'Oswald', sans-serif;
 
-} 
+}
+#feelings{
+    max-height:132px;
+    max-width: 482px;
+}
